@@ -1,0 +1,58 @@
+# ============================================================
+# YOLOv8 Dataset Configuration
+# AI-Based Landslide Prediction and Detection System
+# ============================================================
+#
+# Directory structure expected:
+#   dataset/
+#   ├── train/
+#   │   ├── images/
+#   │   └── labels/
+#   ├── val/
+#   │   ├── images/
+#   │   └── labels/
+#   └── test/
+#       ├── images/
+#       └── labels/
+#
+# Label format (YOLO):
+#   <class_id> <x_center> <y_center> <width> <height>
+#   All values are normalized (0-1) relative to image dimensions
+#
+# Example label file content:
+#   0 0.45 0.52 0.30 0.25
+#   1 0.70 0.80 0.15 0.10
+# ============================================================
+
+# Dataset root path (adjust to your setup)
+path: /Users/recabjohnsamuel/Desktop/pro/dataset
+
+# Split directories (relative to path)
+train: train/images
+val: val/images
+test: test/images
+
+# Number of classes
+nc: 3
+
+# Class names
+names:
+  0: landslide
+  1: debris_flow
+  2: normal_terrain
+
+# ============================================================
+# Dataset Sources (for reference):
+#
+# 1. Landslide4Sense (Benchmark dataset)
+#    - https://www.iarai.ac.at/landslide4sense/
+#
+# 2. NASA Global Landslide Catalog
+#    - https://data.nasa.gov/Earth-Science/Global-Landslide-Catalog/h9d8-neg4
+#
+# 3. Kaggle Landslide Datasets
+#    - https://www.kaggle.com/datasets (search: landslide satellite)
+#
+# 4. Sentinel-2 Imagery (via Copernicus)
+#    - https://dataspace.copernicus.eu/
+# ============================================================

@@ -1,0 +1,162 @@
+[
+  {
+    "filename": "sample_01_mountainous.png",
+    "filepath": "/Users/recabjohnsamuel/Desktop/pro/demo/images/sample_01_mountainous.png",
+    "style": "mountainous",
+    "seed": 42,
+    "detections": [
+      {
+        "class_id": 0,
+        "class_name": "landslide",
+        "confidence": 0.9582,
+        "bbox": [
+          397.0,
+          208.0,
+          502.0,
+          323.0
+        ],
+        "area": 12075.0
+      }
+    ]
+  },
+  {
+    "filename": "sample_02_hilly.png",
+    "filepath": "/Users/recabjohnsamuel/Desktop/pro/demo/images/sample_02_hilly.png",
+    "style": "hilly",
+    "seed": 43,
+    "detections": [
+      {
+        "class_id": 0,
+        "class_name": "landslide",
+        "confidence": 0.9441,
+        "bbox": [
+          249.0,
+          333.0,
+          339.0,
+          465.0
+        ],
+        "area": 11880.0
+      },
+      {
+        "class_id": 0,
+        "class_name": "landslide",
+        "confidence": 0.72,
+        "bbox": [
+          368.0,
+          409.0,
+          432.0,
+          464.0
+        ],
+        "area": 3520.0
+      }
+    ]
+  },
+  {
+    "filename": "sample_03_valley.png",
+    "filepath": "/Users/recabjohnsamuel/Desktop/pro/demo/images/sample_03_valley.png",
+    "style": "valley",
+    "seed": 44,
+    "detections": [
+      {
+        "class_id": 0,
+        "class_name": "landslide",
+        "confidence": 0.9408,
+        "bbox": [
+          386.0,
+          259.0,
+          475.0,
+          444.0
+        ],
+        "area": 16465.0
+      },
+      {
+        "class_id": 1,
+        "class_name": "debris_flow",
+        "confidence": 0.7618,
+        "bbox": [
+          328.0,
+          247.0,
+          349.0,
+          380.0
+        ],
+        "area": 2793.0
+      }
+    ]
+  },
+  {
+    "filename": "sample_04_mountainous.png",
+    "filepath": "/Users/recabjohnsamuel/Desktop/pro/demo/images/sample_04_mountainous.png",
+    "style": "mountainous",
+    "seed": 45,
+    "detections": [
+      {
+        "class_id": 0,
+        "class_name": "landslide",
+        "confidence": 0.8284,
+        "bbox": [
+          408.0,
+          249.0,
+          500.0,
+          358.0
+        ],
+        "area": 10028.0
+      },
+      {
+        "class_id": 1,
+        "class_name": "debris_flow",
+        "confidence": 0.7522,
+        "bbox": [
+          286.0,
+          167.0,
+          324.0,
+          329.0
+        ],
+        "area": 6156.0
+      },
+      {
+        "class_id": 0,
+        "class_name": "landslide",
+        "confidence": 0.5504,
+        "bbox": [
+          354.0,
+          437.0,
+          426.0,
+          497.0
+        ],
+        "area": 4320.0
+      }
+    ]
+  },
+  {
+    "filename": "sample_05_hilly.png",
+    "filepath": "/Users/recabjohnsamuel/Desktop/pro/demo/images/sample_05_hilly.png",
+    "style": "hilly",
+    "seed": 46,
+    "detections": [
+      {
+        "class_id": 0,
+        "class_name": "landslide",
+        "confidence": 0.9596,
+        "bbox": [
+          268.0,
+          122.0,
+          415.0,
+          298.0
+        ],
+        "area": 25872.0
+      },
+      {
+        "class_id": 1,
+        "class_name": "debris_flow",
+        "confidence": 0.7879,
+        "bbox": [
+          282.0,
+          282.0,
+          336.0,
+          454.0
+        ],
+        "area": 9288.0
+      }
+    ]
+  }
+]
