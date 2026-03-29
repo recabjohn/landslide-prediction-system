@@ -31,7 +31,9 @@ except ImportError:
 # ================================================================
 
 MONITORING_STATIONS = {
-    # --- Western Ghats ---
+    # ═══════════════════════════════════════════════════════════════════
+    # WESTERN GHATS — Monsoon-Heavy Landslide Corridor
+    # ═══════════════════════════════════════════════════════════════════
     "Kodaikanal, Tamil Nadu":       {"lat": 10.2381, "lon": 77.4892, "elevation": 2133, "region": "Western Ghats"},
     "Ooty, Tamil Nadu":             {"lat": 11.4102, "lon": 76.6950, "elevation": 2240, "region": "Nilgiris"},
     "Munnar, Kerala":               {"lat": 10.0889, "lon": 77.0595, "elevation": 1532, "region": "Western Ghats"},
@@ -40,19 +42,70 @@ MONITORING_STATIONS = {
     "Coorg, Karnataka":             {"lat": 12.3375, "lon": 75.8069, "elevation": 1170, "region": "Western Ghats"},
     "Chikmagalur, Karnataka":       {"lat": 13.3161, "lon": 75.7720, "elevation": 1090, "region": "Western Ghats"},
     "Mahabaleshwar, Maharashtra":   {"lat": 17.9307, "lon": 73.6477, "elevation": 1353, "region": "Western Ghats"},
-    # --- Himalayas ---
-    "Kedarnath, Uttarakhand":       {"lat": 30.7352, "lon": 79.0669, "elevation": 3583, "region": "Himalayas"},
-    "Joshimath, Uttarakhand":       {"lat": 30.5550, "lon": 79.5650, "elevation": 1890, "region": "Himalayas"},
-    "Shimla, Himachal Pradesh":     {"lat": 31.1048, "lon": 77.1734, "elevation": 2276, "region": "Himalayas"},
-    "Manali, Himachal Pradesh":     {"lat": 32.2396, "lon": 77.1887, "elevation": 2050, "region": "Himalayas"},
-    "Dharamshala, Himachal Pradesh":{"lat": 32.2190, "lon": 76.3234, "elevation": 1457, "region": "Himalayas"},
-    "Gangtok, Sikkim":              {"lat": 27.3389, "lon": 88.6065, "elevation": 1650, "region": "Himalayas"},
-    "Darjeeling, West Bengal":      {"lat": 27.0360, "lon": 88.2627, "elevation": 2042, "region": "Himalayas"},
-    # --- Northeast India ---
-    "Shillong, Meghalaya":          {"lat": 25.5788, "lon": 91.8933, "elevation": 1496, "region": "Northeast"},
-    "Cherrapunji, Meghalaya":       {"lat": 25.2700, "lon": 91.7200, "elevation": 1484, "region": "Northeast"},
-    "Aizawl, Mizoram":              {"lat": 23.7271, "lon": 92.7176, "elevation": 1132, "region": "Northeast"},
-    "Itanagar, Arunachal Pradesh":  {"lat": 27.0844, "lon": 93.6053, "elevation": 320,  "region": "Northeast"},
+    "Valparai, Tamil Nadu":         {"lat": 10.3264, "lon": 76.9545, "elevation": 1100, "region": "Anamalai Hills"},
+    "Coonoor, Tamil Nadu":          {"lat": 11.3530, "lon": 76.7959, "elevation": 1850, "region": "Nilgiri Hills"},
+    "Vagamon, Kerala":              {"lat": 9.6862,  "lon": 76.9005, "elevation": 1100, "region": "Western Ghats"},
+    "Ponmudi, Kerala":              {"lat": 8.7564,  "lon": 77.1133, "elevation": 1100, "region": "Western Ghats"},
+    "Agumbe, Karnataka":            {"lat": 13.5027, "lon": 75.0925, "elevation": 643,  "region": "Western Ghats"},
+    "Kudremukh, Karnataka":         {"lat": 13.2253, "lon": 75.2500, "elevation": 1894, "region": "Western Ghats"},
+    "Kemmanagundi, Karnataka":      {"lat": 13.5322, "lon": 75.7450, "elevation": 1434, "region": "Baba Budan Hills"},
+    "Silent Valley, Kerala":        {"lat": 11.0790, "lon": 76.4350, "elevation": 900,  "region": "Western Ghats"},
+    "Palani Hills, Tamil Nadu":     {"lat": 10.4391, "lon": 77.5206, "elevation": 2000, "region": "Western Ghats"},
+    "Meghamalai, Tamil Nadu":       {"lat": 9.6500,  "lon": 77.4000, "elevation": 1500, "region": "Western Ghats"},
+    # ═══════════════════════════════════════════════════════════════════
+    # EASTERN GHATS — Lower Risk but Active Monitoring
+    # ═══════════════════════════════════════════════════════════════════
+    "Yelagiri, Tamil Nadu":         {"lat": 12.5809, "lon": 78.6374, "elevation": 980,  "region": "Eastern Ghats"},
+    "Yercaud, Tamil Nadu":          {"lat": 11.7754, "lon": 78.2050, "elevation": 1515, "region": "Shevaroy Hills"},
+    "Kolli Hills, Tamil Nadu":      {"lat": 11.2497, "lon": 78.3555, "elevation": 1300, "region": "Eastern Ghats"},
+    "Javadi Hills, Tamil Nadu":     {"lat": 12.4500, "lon": 78.8500, "elevation": 1100, "region": "Eastern Ghats"},
+    # ═══════════════════════════════════════════════════════════════════
+    # UTTARAKHAND HIMALAYAS — High Disaster Risk Zone
+    # ═══════════════════════════════════════════════════════════════════
+    "Kedarnath, Uttarakhand":       {"lat": 30.7352, "lon": 79.0669, "elevation": 3583, "region": "Garhwal Himalayas"},
+    "Joshimath, Uttarakhand":       {"lat": 30.5550, "lon": 79.5650, "elevation": 1890, "region": "Garhwal Himalayas"},
+    "Badrinath, Uttarakhand":       {"lat": 30.7433, "lon": 79.4938, "elevation": 3300, "region": "Garhwal Himalayas"},
+    "Rudraprayag, Uttarakhand":     {"lat": 30.2850, "lon": 78.9831, "elevation": 610,  "region": "Garhwal Himalayas"},
+    "Nainital, Uttarakhand":        {"lat": 29.3919, "lon": 79.4542, "elevation": 2084, "region": "Kumaon Hills"},
+    "Mussoorie, Uttarakhand":       {"lat": 30.4598, "lon": 78.0644, "elevation": 2005, "region": "Garhwal Himalayas"},
+    "Tehri, Uttarakhand":           {"lat": 30.3781, "lon": 78.4836, "elevation": 1750, "region": "Garhwal Himalayas"},
+    "Pithoragarh, Uttarakhand":     {"lat": 29.5829, "lon": 80.2182, "elevation": 1627, "region": "Kumaon Himalayas"},
+    # ═══════════════════════════════════════════════════════════════════
+    # HIMACHAL PRADESH — Landslide & Flash Flood Corridor
+    # ═══════════════════════════════════════════════════════════════════
+    "Shimla, Himachal Pradesh":     {"lat": 31.1048, "lon": 77.1734, "elevation": 2276, "region": "Himachal Himalayas"},
+    "Manali, Himachal Pradesh":     {"lat": 32.2396, "lon": 77.1887, "elevation": 2050, "region": "Kullu Valley"},
+    "Dharamshala, Himachal Pradesh":{"lat": 32.2190, "lon": 76.3234, "elevation": 1457, "region": "Kangra Valley"},
+    "Kullu, Himachal Pradesh":      {"lat": 31.9574, "lon": 77.1089, "elevation": 1230, "region": "Kullu Valley"},
+    "Kinnaur, Himachal Pradesh":    {"lat": 31.5800, "lon": 78.4700, "elevation": 2320, "region": "Kinnaur Himalayas"},
+    "Lahaul-Spiti, Himachal Pradesh":{"lat": 32.5500, "lon": 77.5000, "elevation": 3350, "region": "Trans-Himalaya"},
+    "Dalhousie, Himachal Pradesh":  {"lat": 32.5387, "lon": 75.9707, "elevation": 1970, "region": "Dhauladhar Range"},
+    "Kasauli, Himachal Pradesh":    {"lat": 30.8988, "lon": 76.9654, "elevation": 1927, "region": "Shivalik Hills"},
+    # ═══════════════════════════════════════════════════════════════════
+    # EASTERN HIMALAYAS — Sikkim, West Bengal, Arunachal
+    # ═══════════════════════════════════════════════════════════════════
+    "Gangtok, Sikkim":              {"lat": 27.3389, "lon": 88.6065, "elevation": 1650, "region": "Sikkim Himalayas"},
+    "Darjeeling, West Bengal":      {"lat": 27.0360, "lon": 88.2627, "elevation": 2042, "region": "Darjeeling Hills"},
+    "Tawang, Arunachal Pradesh":    {"lat": 27.5860, "lon": 91.8594, "elevation": 3048, "region": "Eastern Himalayas"},
+    "Ziro Valley, Arunachal Pradesh":{"lat": 27.5455, "lon": 93.8252, "elevation": 1572, "region": "Lower Subansiri"},
+    "Itanagar, Arunachal Pradesh":  {"lat": 27.0844, "lon": 93.6053, "elevation": 320,  "region": "Papum Pare"},
+    # ═══════════════════════════════════════════════════════════════════
+    # NORTHEAST INDIA — Extreme Rainfall Zones
+    # ═══════════════════════════════════════════════════════════════════
+    "Shillong, Meghalaya":          {"lat": 25.5788, "lon": 91.8933, "elevation": 1496, "region": "Khasi Hills"},
+    "Cherrapunji, Meghalaya":       {"lat": 25.2700, "lon": 91.7200, "elevation": 1484, "region": "Khasi Hills"},
+    "Mawsynram, Meghalaya":         {"lat": 25.2971, "lon": 91.5821, "elevation": 1400, "region": "Khasi Hills"},
+    "Kohima, Nagaland":             {"lat": 25.6751, "lon": 94.1086, "elevation": 1444, "region": "Naga Hills"},
+    "Imphal, Manipur":              {"lat": 24.8170, "lon": 93.9368, "elevation": 786,  "region": "Manipur Valley"},
+    "Aizawl, Mizoram":              {"lat": 23.7271, "lon": 92.7176, "elevation": 1132, "region": "Lushai Hills"},
+    # ═══════════════════════════════════════════════════════════════════
+    # KASHMIR & LADAKH — Avalanche and Cloud Burst Zones
+    # ═══════════════════════════════════════════════════════════════════
+    "Gulmarg, Kashmir":             {"lat": 34.0500, "lon": 74.3800, "elevation": 2690, "region": "Pir Panjal Range"},
+    "Pahalgam, Kashmir":            {"lat": 34.0161, "lon": 75.3150, "elevation": 2130, "region": "Lidder Valley"},
+    "Sonamarg, Kashmir":            {"lat": 34.3039, "lon": 75.2938, "elevation": 2740, "region": "Sindh Valley"},
+    "Leh, Ladakh":                  {"lat": 34.1526, "lon": 77.5771, "elevation": 3524, "region": "Trans-Himalaya"},
+    "Kargil, Ladakh":               {"lat": 34.5539, "lon": 76.1349, "elevation": 2676, "region": "Trans-Himalaya"},
 }
 
 
@@ -75,6 +128,12 @@ class WeatherDataFetcher:
         "weather_code",
         "cloud_cover",
         "wind_speed_10m",
+        "wind_direction_10m",
+        "wind_gusts_10m",
+        "dew_point_2m",
+        "surface_pressure",
+        "visibility",
+        "uv_index",
         "soil_moisture_0_to_1cm",
         "soil_moisture_1_to_3cm",
         "soil_moisture_3_to_9cm",
@@ -88,6 +147,8 @@ class WeatherDataFetcher:
         "precipitation_hours",
         "temperature_2m_max",
         "temperature_2m_min",
+        "wind_speed_10m_max",
+        "wind_gusts_10m_max",
     ]
 
     # WMO Weather codes → descriptions
@@ -171,6 +232,10 @@ class WeatherDataFetcher:
         rain_hours = daily.get("precipitation_hours", [])
         rain_hours_7d = sum(h for h in rain_hours if h is not None)
 
+        # Wind gust max over 7 days
+        wind_gusts_daily = daily.get("wind_gusts_10m_max", [])
+        max_gust_7d = max((g for g in wind_gusts_daily if g is not None), default=0)
+
         return {
             "station": station_name,
             "lat": lat,
@@ -182,6 +247,12 @@ class WeatherDataFetcher:
                 "precipitation": current.get("precipitation", 0),
                 "rain": current.get("rain", 0),
                 "wind_speed": current.get("wind_speed_10m", 0),
+                "wind_direction": current.get("wind_direction_10m", 0),
+                "wind_gusts": current.get("wind_gusts_10m", 0),
+                "dew_point": current.get("dew_point_2m", 0),
+                "surface_pressure": current.get("surface_pressure", 1013),
+                "visibility": current.get("visibility", 10000),
+                "uv_index": current.get("uv_index", 0),
                 "cloud_cover": current.get("cloud_cover", 0),
                 "weather_code": weather_code,
                 "weather_description": weather_desc,
@@ -198,6 +269,9 @@ class WeatherDataFetcher:
                 "daily_precip": precip_daily,
                 "daily_temp_max": daily.get("temperature_2m_max", []),
                 "daily_temp_min": daily.get("temperature_2m_min", []),
+                "daily_wind_speed_max": daily.get("wind_speed_10m_max", []),
+                "daily_wind_gusts_max": wind_gusts_daily,
+                "max_gust_7d": max_gust_7d,
                 "dates": daily.get("time", []),
             },
         }
@@ -220,6 +294,12 @@ class WeatherDataFetcher:
                 "precipitation": round(random.uniform(0, 8), 1),
                 "rain": round(random.uniform(0, 5), 1),
                 "wind_speed": round(random.uniform(2, 25), 1),
+                "wind_direction": round(random.uniform(0, 360), 0),
+                "wind_gusts": round(random.uniform(5, 70), 1),
+                "dew_point": round(random.uniform(5, 22), 1),
+                "surface_pressure": round(random.uniform(980, 1025), 1),
+                "visibility": round(random.uniform(1000, 50000), 0),
+                "uv_index": round(random.uniform(0, 11), 1),
                 "cloud_cover": round(random.uniform(20, 100), 0),
                 "weather_code": random.choice([0, 3, 61, 63, 80, 95]),
                 "weather_description": random.choice(["Clear sky", "Moderate rain", "Overcast", "Slight rain"]),
@@ -236,6 +316,9 @@ class WeatherDataFetcher:
                 "daily_precip": [round(random.uniform(0, 30), 1) for _ in range(8)],
                 "daily_temp_max": [round(random.uniform(18, 32), 1) for _ in range(8)],
                 "daily_temp_min": [round(random.uniform(8, 20), 1) for _ in range(8)],
+                "daily_wind_speed_max": [round(random.uniform(5, 40), 1) for _ in range(8)],
+                "daily_wind_gusts_max": [round(random.uniform(10, 80), 1) for _ in range(8)],
+                "max_gust_7d": round(random.uniform(15, 80), 1),
                 "dates": [(datetime.now() - timedelta(days=7-i)).strftime("%Y-%m-%d") for i in range(8)],
             },
         }
@@ -311,12 +394,40 @@ class WeatherRiskCalculator:
         else:
             humidity_score = 15
 
-        # --- Weighted combination ---
+        # --- Factor 5: Wind gusts — erosion & slope destabilization (0-100) ---
+        wind_gusts = current.get("wind_gusts", 0) or 0
+        if wind_gusts > 80:
+            wind_score = 100
+        elif wind_gusts > 60:
+            wind_score = 75
+        elif wind_gusts > 40:
+            wind_score = 50
+        elif wind_gusts > 20:
+            wind_score = 25
+        else:
+            wind_score = 10
+
+        # --- Factor 6: Pressure drop — storm indicator (0-100) ---
+        pressure = current.get("surface_pressure", 1013) or 1013
+        if pressure < 990:
+            pressure_score = 100
+        elif pressure < 1000:
+            pressure_score = 75
+        elif pressure < 1008:
+            pressure_score = 45
+        elif pressure < 1013:
+            pressure_score = 20
+        else:
+            pressure_score = 5
+
+        # --- Weighted combination (6 factors) ---
         weights = {
-            "rainfall_intensity": 0.30,
-            "cumulative_rainfall": 0.30,
-            "soil_saturation": 0.25,
-            "humidity": 0.15,
+            "rainfall_intensity": 0.25,
+            "cumulative_rainfall": 0.25,
+            "soil_saturation": 0.20,
+            "humidity": 0.12,
+            "wind_gusts": 0.10,
+            "pressure_drop": 0.08,
         }
 
         overall = (
@@ -324,6 +435,8 @@ class WeatherRiskCalculator:
             + cumulative_score * weights["cumulative_rainfall"]
             + soil_score * weights["soil_saturation"]
             + humidity_score * weights["humidity"]
+            + wind_score * weights["wind_gusts"]
+            + pressure_score * weights["pressure_drop"]
         )
 
         # --- Alert level ---
@@ -348,5 +461,9 @@ class WeatherRiskCalculator:
                                     "value": soil_avg, "unit": "%"},
                 "humidity": {"score": humidity_score, "weight": weights["humidity"],
                              "value": humidity, "unit": "%"},
+                "wind_gusts": {"score": wind_score, "weight": weights["wind_gusts"],
+                               "value": wind_gusts, "unit": "km/h"},
+                "pressure_drop": {"score": pressure_score, "weight": weights["pressure_drop"],
+                                  "value": pressure, "unit": "hPa"},
             },
         }

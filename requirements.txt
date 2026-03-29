@@ -1,10 +1,11 @@
 # AI-Based Landslide Prediction and Detection System
 # Core Dependencies
 
-# Deep Learning & YOLO
+# Deep Learning & YOLO (CPU-only for cloud deployment - much smaller)
 ultralytics>=8.0.0
-torch>=2.0.0
-torchvision>=0.15.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
 
 # Computer Vision & Image Processing
 opencv-python-headless>=4.8.0

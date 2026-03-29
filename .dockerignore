@@ -1,0 +1,34 @@
+# Version control
+.git
+.gitignore
+
+# Python
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+.eggs
+
+# Training runs & model artifacts (use pre-trained weights only)
+runs/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docs / Dev
+*.md
+!README.md
+ANNOTATION_GUIDE.md
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
