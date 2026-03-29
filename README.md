@@ -14,6 +14,8 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
+- [Docker Hosting](#docker-hosting)
+- [Azure Deployment (Docker)](#azure-deployment-docker)
 - [Dataset Preparation](#dataset-preparation)
 - [Training Your Own Model](#training-your-own-model)
 - [Project Structure](#project-structure)
@@ -116,6 +118,70 @@ streamlit run ui/app.py
 ```
 
 The dashboard opens at `http://localhost:8501`.
+
+---
+
+## 🐳 Docker Hosting
+
+You can run the full Streamlit dashboard in Docker locally.
+
+### Option A: Docker CLI
+
+```bash
+docker build -t landslide-dashboard .
+docker run --rm -p 8501:8501 landslide-dashboard
+```
+
+Open: `http://localhost:8501`
+
+### Option B: Docker Compose
+
+```bash
+docker compose up --build
+```
+
+Open: `http://localhost:8501`
+
+---
+
+## ☁️ Azure Deployment (Docker)
+
+This project includes an Azure App Service deployment script for the Docker image.
+
+### Prerequisites
+
+- Azure account and active subscription
+- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+- Docker Desktop running
+
+### Deploy with one script
+
+```bash
+chmod +x scripts/deploy_azure_appservice.sh
+
+./scripts/deploy_azure_appservice.sh \
+  <resource-group> \
+  <location> \
+  <acr-name> \
+  <app-service-plan> \
+  <webapp-name>
+```
+
+Example:
+
+```bash
+./scripts/deploy_azure_appservice.sh \
+  landslide-rg \
+  centralindia \
+  landslideacr123 \
+  landslide-plan \
+  landslide-dashboard-2026
+```
+
+Notes:
+- `acr-name` must be globally unique and use lowercase letters/numbers.
+- `webapp-name` must be globally unique.
+- The app is exposed on port `8501` via `WEBSITES_PORT=8501`.
 
 ### Demo Mode (No setup required)
 
