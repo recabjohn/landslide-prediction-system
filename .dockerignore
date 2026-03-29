@@ -32,3 +32,4 @@ ANNOTATION_GUIDE.md
 Dockerfile
 .dockerignore
 docker-compose*.yml
+dataset/

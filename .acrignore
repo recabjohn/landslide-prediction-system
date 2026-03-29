@@ -1,0 +1,6 @@
+runs/
+dataset/
+demo/
+yolov8n.pt
+models/
+preprocessing/
