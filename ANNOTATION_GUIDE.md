@@ -1,6 +1,6 @@
 # 📝 Landslide Image Annotation Guide
 
-This guide explains how to annotate satellite images for training the YOLOv8 landslide detection model.
+This guide explains how to annotate satellite images for training the YOLOv11 landslide detection model.
 
 ---
 
@@ -49,7 +49,7 @@ pip install labelImg
 3. Upload your satellite images
 4. Define classes: `landslide`, `debris_flow`, `normal_terrain`
 5. Draw bounding boxes around each feature
-6. When done, click **"Generate"** → **"Export"** → Choose **YOLOv8** format
+6. When done, click **"Generate"** → **"Export"** → Choose **YOLOv11** format
 7. Download and extract into `dataset/` directory
 
 **Advantages:** Auto-augmentation, dataset versioning, team collaboration

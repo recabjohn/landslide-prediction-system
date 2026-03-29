@@ -1,5 +1,5 @@
 # 🛰️ AI-Based Landslide Prediction and Detection System
-### Using YOLOv8 and Satellite Imagery
+### Using YOLOv11 and Satellite Imagery
 
 <p align="center">
   <strong>An end-to-end deep learning system for automated landslide detection and risk assessment from satellite imagery</strong>
@@ -26,7 +26,7 @@
 
 ## 🔍 Overview
 
-This project implements an **AI-based landslide prediction and detection system** that uses **YOLOv8 object detection** on **satellite imagery** to:
+This project implements an **AI-based landslide prediction and detection system** that uses **YOLOv11 object detection** on **satellite imagery** to:
 
 1. **Detect** landslides, debris flows, and terrain anomalies in satellite images
 2. **Predict** landslide risk levels using detection analysis and terrain feature extraction
@@ -49,7 +49,7 @@ Satellite Image (Upload / API / Demo)
            │
            ▼
   ┌───────────────────┐
-  │ YOLOv8 Inference  │ ← Object detection model
+  │ YOLOv11 Inference  │ ← Object detection model
   └────────┬──────────┘
            │
            ▼
@@ -74,7 +74,7 @@ Satellite Image (Upload / API / Demo)
 
 | Feature | Description |
 |---------|-------------|
-| 🔍 **YOLO Detection** | YOLOv8-based landslide and debris flow detection |
+| 🔍 **YOLO Detection** | YOLOv11-based landslide and debris flow detection |
 | 📊 **Risk Scoring** | 0-100% risk score with Low/Medium/High/Critical levels |
 | 🛰️ **Satellite Integration** | Sentinel-2 API integration with local fallback |
 | 🖼️ **Visual Overlays** | Bounding boxes, confidence labels, risk badges |
@@ -272,10 +272,10 @@ See [ANNOTATION_GUIDE.md](ANNOTATION_GUIDE.md) for detailed annotation instructi
 
 ```bash
 # Using the training script
-python train.py --data dataset.yaml --model yolov8n.pt --epochs 50 --imgsz 640
+python train.py --data dataset.yaml --model yolo11n.pt --epochs 50 --imgsz 640
 
 # Or using YOLO CLI directly
-yolo detect train data=dataset.yaml model=yolov8n.pt epochs=50 imgsz=640
+yolo detect train data=dataset.yaml model=yolo11n.pt epochs=50 imgsz=640
 ```
 
 Place your trained weights in the `models/` directory.
@@ -344,7 +344,7 @@ Fetches satellite imagery via Sentinel-2 API or loads local images. Includes dem
 Resizes, normalizes, and converts images for YOLO inference (640×640 input).
 
 ### 3. YOLO Training (`train.py`)
-Complete YOLOv8 training pipeline with configurable hyperparameters.
+Complete YOLOv11 training pipeline with configurable hyperparameters.
 
 ### 4. Detection (`detection/`)
 Runs YOLO inference on satellite images and extracts bounding boxes with confidence scores.
@@ -362,7 +362,7 @@ Interactive web UI for image upload, detection, and risk visualization.
 
 ## 📚 References
 
-1. Jocher, G., et al. (2023). *Ultralytics YOLOv8*. https://github.com/ultralytics/ultralytics
+1. Jocher, G., et al. (2023). *Ultralytics YOLOv11*. https://github.com/ultralytics/ultralytics
 2. Ghorbanzadeh, O., et al. (2022). *Landslide4Sense: Reference Benchmark Data and Deep Learning Models for Landslide Detection*. IEEE TGRS.
 3. Kirschbaum, D., et al. (2015). *A global landslide catalog for hazard applications*. Natural Hazards.
 4. European Space Agency. *Sentinel-2 Mission*. https://sentinel.esa.int/web/sentinel/missions/sentinel-2

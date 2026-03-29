@@ -8,7 +8,7 @@ Features:
   • Real-time weather data from Open-Meteo API
   • Extended climate metrics (wind, humidity, pressure, visibility)
   • Multi-factor risk prediction with ML-powered early warnings
-  • YOLOv8 satellite imagery analysis
+  • YOLOv11 satellite imagery analysis
   • 60+ Indian hill station coverage
   • Event reporting and alert system
 
@@ -724,7 +724,7 @@ with st.sidebar:
     # Model status
     st.markdown("##### 🤖 System Status")
     if detector.model is not None:
-        st.success("✅ YOLOv8 Model Active")
+        st.success("✅ YOLOv11 Model Active")
         st.caption(f"`{os.path.basename(detector.model_path)}`")
     else:
         st.error("⚠️ Model Not Loaded")
@@ -1007,11 +1007,11 @@ else:
 
 
 # ════════════════════════════════════════════════════════════════════
-# SECTION 6: SATELLITE IMAGE ANALYSIS (YOLOv8)
+# SECTION 6: SATELLITE IMAGE ANALYSIS (YOLOv11)
 # ════════════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="section-header">
-    <h2>🛰️ Satellite Image Analysis <span class="badge">YOLOv8</span></h2>
+    <h2>🛰️ Satellite Image Analysis <span class="badge">YOLOv11</span></h2>
 </div>
 """, unsafe_allow_html=True)
 
@@ -1051,10 +1051,10 @@ if sat_image is not None:
     ic1, ic2 = st.columns(2)
     with ic1:
         st.markdown("**📸 Original Satellite Image**")
-        st.image(visualizer.bgr_to_rgb(processed), use_column_width=True)
+        st.image(visualizer.bgr_to_rgb(processed), use_container_width=True)
     with ic2:
-        st.markdown("**🔍 YOLOv8 Detection Results**")
-        st.image(visualizer.bgr_to_rgb(annotated), use_column_width=True)
+        st.markdown("**🔍 YOLOv11 Detection Results**")
+        st.image(visualizer.bgr_to_rgb(annotated), use_container_width=True)
 
     # Detection alerts
     if detections:
@@ -1130,7 +1130,7 @@ if sat_image is not None:
         st.success("✅ **TERRAIN STABLE** — No landslide features detected in satellite imagery. Area appears safe.")
 
 else:
-    st.info("👆 Select a satellite image source from the sidebar to run YOLOv8 detection analysis.")
+    st.info("👆 Select a satellite image source from the sidebar to run YOLOv11 detection analysis.")
 
 
 # ════════════════════════════════════════════════════════════════════
@@ -1175,7 +1175,7 @@ for icon, time, msg in events:
 st.markdown(f"""
 <div class="footer">
     <p class="brand">🛰️ AI Landslide Monitoring System v3.0</p>
-    <p>Powered by YOLOv8 • Open-Meteo API • PyTorch • Streamlit</p>
+    <p>Powered by YOLOv11 • Open-Meteo API • PyTorch • Streamlit</p>
     <p>Monitoring {len(MONITORING_STATIONS)} stations across {len(all_regions)} regions</p>
     <p style="margin-top: 12px; font-size: 0.75rem;">© 2024-2025 • Final Year Engineering Project • NDMA India</p>
 </div>

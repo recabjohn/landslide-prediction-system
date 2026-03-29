@@ -1,7 +1,7 @@
 """
 Landslide Detection Module
 ============================
-Runs YOLOv8 inference on satellite images to detect:
+Runs YOLOv11 inference on satellite images to detect:
   - Landslides
   - Debris flows
   - Normal terrain features

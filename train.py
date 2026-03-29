@@ -1,16 +1,16 @@
 """
-YOLOv8 Training Script for Landslide Detection
+YOLOv11 Training Script for Landslide Detection
 =================================================
-Trains a YOLOv8 object detection model on satellite imagery
+Trains a YOLOv11 object detection model on satellite imagery
 annotated with landslide, debris_flow, and normal_terrain classes.
 
 Usage:
-    python train.py --data dataset.yaml --model yolov8n.pt --epochs 50 --imgsz 640
+    python train.py --data dataset.yaml --model yolo11n.pt --epochs 50 --imgsz 640
 
     Or with all options:
     python train.py \\
         --data dataset.yaml \\
-        --model yolov8n.pt \\
+        --model yolo11n.pt \\
         --epochs 100 \\
         --imgsz 640 \\
         --batch 16 \\
@@ -19,7 +19,7 @@ Usage:
         --name experiment_1
 
 Equivalent YOLO CLI command:
-    yolo detect train data=dataset.yaml model=yolov8n.pt epochs=50 imgsz=640
+    yolo detect train data=dataset.yaml model=yolo11n.pt epochs=50 imgsz=640
 """
 
 import argparse
@@ -40,15 +40,15 @@ logger = logging.getLogger(__name__)
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Train YOLOv8 model for landslide detection",
+        description="Train YOLOv11 model for landslide detection",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   # Quick training with nano model
-  python train.py --data dataset.yaml --model yolov8n.pt --epochs 50
+  python train.py --data dataset.yaml --model yolo11n.pt --epochs 50
 
   # Full training with medium model on GPU
-  python train.py --data dataset.yaml --model yolov8m.pt --epochs 100 --batch 16 --device 0
+  python train.py --data dataset.yaml --model yolo11m.pt --epochs 100 --batch 16 --device 0
 
   # Resume training from a checkpoint
   python train.py --resume runs/landslide/experiment_1/weights/last.pt
@@ -58,8 +58,8 @@ Examples:
     # Required arguments
     parser.add_argument("--data", type=str, default="dataset.yaml",
                         help="Path to dataset YAML configuration (default: dataset.yaml)")
-    parser.add_argument("--model", type=str, default="yolov8n.pt",
-                        help="Pre-trained model weights to start from (default: yolov8n.pt)")
+    parser.add_argument("--model", type=str, default="yolo11n.pt",
+                        help="Pre-trained model weights to start from (default: yolo11n.pt)")
 
     # Training hyperparameters
     parser.add_argument("--epochs", type=int, default=50,
@@ -149,7 +149,7 @@ def validate_dataset(data_path):
 
 def train(args):
     """
-    Execute YOLOv8 training.
+    Execute YOLOv11 training.
 
     Args:
         args: Parsed command-line arguments
@@ -169,7 +169,7 @@ def train(args):
         args.name = f"landslide_{timestamp}"
 
     logger.info("=" * 60)
-    logger.info("  LANDSLIDE DETECTION - YOLOv8 TRAINING")
+    logger.info("  LANDSLIDE DETECTION - YOLOv11 TRAINING")
     logger.info("=" * 60)
     logger.info(f"  Dataset     : {args.data}")
     logger.info(f"  Base Model  : {args.model}")
