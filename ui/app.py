@@ -661,7 +661,7 @@ with st.sidebar:
     st.markdown("##### 🛰️ Satellite Analysis")
     analysis_mode = st.radio(
         "Image Source",
-        ["📁 Dataset (Pre-loaded)", "🏔️ Indian Hills Gallery", "📤 Upload Image", "🔴 Live Satellite"],
+        ["🔴 Live Satellite", "📤 Upload Image"],
         index=0,
     )
 
@@ -669,43 +669,7 @@ with st.sidebar:
     dataset_image_path = None
     fetch_live = False
 
-    if analysis_mode == "📁 Dataset (Pre-loaded)":
-        dataset_dir = os.path.join(PROJECT_ROOT, "dataset")
-        imgs = []
-        for split in ["test", "val", "train"]:
-            img_dir = os.path.join(dataset_dir, split, "images")
-            if os.path.isdir(img_dir):
-                for f in sorted(os.listdir(img_dir)):
-                    if f.lower().endswith((".jpg", ".jpeg", ".png")):
-                        imgs.append((f"{split}/{f}", os.path.join(img_dir, f)))
-        if imgs:
-            sel = st.selectbox("Select Image", range(len(imgs)),
-                               format_func=lambda i: imgs[i][0])
-            dataset_image_path = imgs[sel][1]
-        else:
-            st.info("No dataset images found")
-            
-    elif analysis_mode == "🏔️ Indian Hills Gallery":
-        hill_images = []
-        if os.path.isdir(INDIAN_HILLS_DIR):
-            for fname in sorted(os.listdir(INDIAN_HILLS_DIR)):
-                if fname.lower().endswith((".jpg", ".jpeg", ".png")):
-                    key = fname.rsplit(".", 1)[0]
-                    meta = INDIAN_HILLS_META.get(key, {})
-                    label = meta.get("label", key.replace("_", " ").title())
-                    region = meta.get("region", "")
-                    notes = meta.get("notes", "")
-                    display = f"{label} ({region})"
-                    hill_images.append((display, os.path.join(INDIAN_HILLS_DIR, fname), notes))
-        if hill_images:
-            sel_hill = st.selectbox("Select Hill Station", range(len(hill_images)),
-                                    format_func=lambda i: hill_images[i][0])
-            dataset_image_path = hill_images[sel_hill][1]
-            st.caption(f"📝 {hill_images[sel_hill][2]}")
-        else:
-            st.warning("Run: `python satellite_fetcher/fetch_indian_hills.py`")
-            
-    elif analysis_mode == "📤 Upload Image":
+    if analysis_mode == "📤 Upload Image":
         uploaded_file = st.file_uploader(
             "Upload Satellite Image", type=["jpg", "jpeg", "png", "tif"],
         )
@@ -729,14 +693,7 @@ with st.sidebar:
     else:
         st.error("⚠️ Model Not Loaded")
     
-    st.markdown(f"""
-    <div style="margin-top: 8px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.75rem; color: #718096;">
-        <div>📡 Stations: <strong style="color: #fff;">{len(MONITORING_STATIONS)}</strong></div>
-        <div>🗺️ Regions: <strong style="color: #fff;">{len(all_regions)}</strong></div>
-        <div>🖼️ Hill Images: <strong style="color: #fff;">{len(INDIAN_HILLS_META)}</strong></div>
-    </div>
-    """, unsafe_allow_html=True)
-
+    
     st.markdown("---")
     refresh = st.button("🔄 Refresh Live Data", use_container_width=True, type="primary")
 
@@ -1177,6 +1134,6 @@ st.markdown(f"""
     <p class="brand">🛰️ AI Landslide Monitoring System v3.0</p>
     <p>Powered by YOLOv11 • Open-Meteo API • PyTorch • Streamlit</p>
     <p>Monitoring {len(MONITORING_STATIONS)} stations across {len(all_regions)} regions</p>
-    <p style="margin-top: 12px; font-size: 0.75rem;">© 2024-2025 • Final Year Engineering Project • NDMA India</p>
+    <p style="margin-top: 12px; font-size: 0.75rem;">© 2024-2025 • National Disaster Management Authority, Government of India</p>
 </div>
 """, unsafe_allow_html=True)

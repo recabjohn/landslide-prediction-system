@@ -16,6 +16,7 @@ API docs: https://open-meteo.com/en/docs
 import logging
 import time
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 logger = logging.getLogger(__name__)
 
@@ -240,7 +241,7 @@ class WeatherDataFetcher:
             "station": station_name,
             "lat": lat,
             "lon": lon,
-            "fetched_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S IST"),
+            "fetched_at": datetime.now(ZoneInfo('Asia/Kolkata')).strftime("%Y-%m-%d %H:%M:%S IST"),
             "current": {
                 "temperature": current.get("temperature_2m", 0),
                 "humidity": current.get("relative_humidity_2m", 0),
@@ -286,7 +287,7 @@ class WeatherDataFetcher:
             "station": station_name,
             "lat": lat,
             "lon": lon,
-            "fetched_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S IST"),
+            "fetched_at": datetime.now(ZoneInfo('Asia/Kolkata')).strftime("%Y-%m-%d %H:%M:%S IST"),
             "source": "simulated",
             "current": {
                 "temperature": round(random.uniform(12, 28), 1),
